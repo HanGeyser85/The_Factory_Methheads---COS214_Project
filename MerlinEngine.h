@@ -10,6 +10,8 @@ class MerlinEngine : public RocketPart{
     private:
 
     public:
+        MerlinEngine();
+        ~MerlinEngine();
         void print();
 };
 #endif

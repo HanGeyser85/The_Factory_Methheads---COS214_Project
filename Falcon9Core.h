@@ -6,10 +6,12 @@
 using namespace std;
 
 class Falcon9Core : public RocketPart{
-    
+
     private:
 
     public:
+        Falcon9Core();
+        ~Falcon9Core();
         void print();
 };
 #endif

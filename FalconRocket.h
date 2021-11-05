@@ -3,7 +3,6 @@
 #ifndef FALCONROCKET_H
 #define FALCONROCKET_H
 #include "RocketPart.h"
-#include <list>
 using namespace std;
 
 class FalconRocket : public RocketPart
@@ -11,6 +10,7 @@ class FalconRocket : public RocketPart
     private:
         string name;
         list<RocketPart*> parts;
+        bool engineFault;
 
     public:
         FalconRocket(string);
@@ -18,5 +18,6 @@ class FalconRocket : public RocketPart
         void print();
         void add(RocketPart*);
         void remove(RocketPart*);
+        bool hasEngineFault();
 };
 #endif

@@ -3,6 +3,7 @@ using namespace std;
 
 FalconRocket::FalconRocket(string n) : name(n)
 {
+    engineFault = false;
     //if n == Falcon9   
     //this->add( factory->makeMerlinEngine()) x 7
 }
@@ -30,4 +31,9 @@ void FalconRocket::add(RocketPart* rp)
 void FalconRocket::remove(RocketPart* rp)
 {
     parts.remove(rp);
+}
+
+bool FalconRocket::hasEngineFault()
+{
+    return this->engineFault;
 }
