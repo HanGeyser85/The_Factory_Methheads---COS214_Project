@@ -1,12 +1,12 @@
 //Leaf class in Composite DP
 
-#ifndef VACUUMMERLINENGINE_H
-#define VACUUMMERLINENGINE_H
+#ifndef FALOCN9CORE_H
+#define FALCON9CORE_H
 #include "RocketPart.h"
 using namespace std;
 
-class VacuumMerlinEngine : public RocketPart
-{
+class Falcon9Core : public RocketPart{
+    
     private:
 
     public:

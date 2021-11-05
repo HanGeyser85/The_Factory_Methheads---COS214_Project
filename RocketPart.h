@@ -10,10 +10,11 @@ using namespace std;
 class RocketPart {
 
     private:
-        
+
     public:
-        virtual void add(RocketPart*);
-        virtual void remove(RocketPart*);
+        virtual void print() = 0;
+        virtual void add(RocketPart*) = 0;
+        virtual void remove(RocketPart*) = 0;
 
 };
 #endif

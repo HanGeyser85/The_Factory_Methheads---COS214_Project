@@ -9,9 +9,14 @@ using namespace std;
 class FalconRocket : public RocketPart
 {
     private:
+        string name;
         list<RocketPart*> parts;
 
     public:
-    
+        FalconRocket(string);
+        ~FalconRocket();
+        void print();
+        void add(RocketPart*);
+        void remove(RocketPart*);
 };
 #endif
