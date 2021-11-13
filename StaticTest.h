@@ -8,6 +8,7 @@ class StaticTest : public Command
     private:
 
     public:
+        StaticTest(FalconRocket* f);
         void execute();
 };
 #endif

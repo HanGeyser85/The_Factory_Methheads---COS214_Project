@@ -8,6 +8,7 @@ class NextStage : public Command
     private:
 
     public:
+        NextStage(FalconRocket*);
         void execute();
 };
 #endif

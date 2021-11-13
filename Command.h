@@ -12,7 +12,6 @@ class Command
     public:
         Command(FalconRocket*);
         virtual void execute() = 0;
-        virtual void undo() = 0;
         FalconRocket* accessRocket();
 };
 #endif

@@ -9,6 +9,7 @@ class FalconHeavy : public FalconRocket
     private:
 
     public:
-
+        FalconHeavy();
+        ~FalconHeavy();
 };
 #endif

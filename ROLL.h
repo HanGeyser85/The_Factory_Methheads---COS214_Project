@@ -8,6 +8,7 @@ class ROLL : public Command
     private:
 
     public:
+        ROLL(FalconRocket*);
         void execute();
 };
 #endif

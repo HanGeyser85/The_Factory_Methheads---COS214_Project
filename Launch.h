@@ -8,6 +8,7 @@ class Launch : public Command
     private:
 
     public:
+        Launch(FalconRocket*);
         void execute();
 };
 #endif

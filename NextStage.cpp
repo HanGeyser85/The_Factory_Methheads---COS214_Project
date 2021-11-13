@@ -7,3 +7,8 @@ void NextStage::execute()
     
     //Lose parts like engines perhaps
 }
+
+NextStage::NextStage(FalconRocket* f) : Command(f)
+{
+    
+}

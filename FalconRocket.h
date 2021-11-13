@@ -16,8 +16,8 @@ class FalconRocket : public RocketPart
         FalconRocket(string);
         ~FalconRocket();
         void print();
-        void add(RocketPart*);
-        void remove(RocketPart*);
+        void add(RocketPart*) override;
+        void remove(RocketPart*) override;
         bool hasEngineFault();
 };
 #endif

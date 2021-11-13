@@ -10,3 +10,8 @@ void StaticTest::execute()
     else
         cout << "STATIC TEST complete" << endl;
 }
+
+StaticTest::StaticTest(FalconRocket* f) : Command(f)
+{
+    
+}
