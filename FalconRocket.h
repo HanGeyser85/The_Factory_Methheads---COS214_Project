@@ -9,15 +9,19 @@ class FalconRocket : public RocketPart
 {
     private:
         string name;
+        string type;
         list<RocketPart*> parts;
         bool engineFault;
 
     public:
-        FalconRocket(string);
+        FalconRocket(string, string);
         ~FalconRocket();
         void print();
         void add(RocketPart*) override;
         void remove(RocketPart*) override;
         bool hasEngineFault();
+        string getName();
+        string getType();
+
 };
 #endif

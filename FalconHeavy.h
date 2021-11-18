@@ -9,7 +9,7 @@ class FalconHeavy : public FalconRocket
     private:
 
     public:
-        FalconHeavy();
+        FalconHeavy(string, string);
         ~FalconHeavy();
 };
 #endif

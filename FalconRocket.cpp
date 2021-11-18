@@ -1,9 +1,10 @@
 #include "FalconRocket.h"
 using namespace std;
 
-FalconRocket::FalconRocket(string n) : name(n)
+FalconRocket::FalconRocket(string n, string t) : name(n), type(t)
 {
     engineFault = false;
+
     //if n == Falcon9   
     //this->add( factory->makeMerlinEngine()) x 7
 }
