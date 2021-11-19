@@ -11,7 +11,6 @@ protected:
 public:
     StarlinkSatellite(/* args */);
     ~StarlinkSatellite();
-    void communicate(string);
     Satellite *clone();
     void set(Communications *coms);
 };
