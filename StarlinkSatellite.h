@@ -12,7 +12,7 @@ public:
     StarlinkSatellite(/* args */);
     ~StarlinkSatellite();
     Satellite *clone();
-    void set(Communications *coms);
+    void set(Communications *);
 };
 
 #endif
