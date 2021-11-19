@@ -21,7 +21,8 @@ public:
     ~Satellite();
     int getID();
     void addNextSat(Satellite *);
-    virtual void communicate(string);
+    Satellite *getNext();
+    void communicate(string);
     virtual Satellite *clone() = 0;
     virtual void set(Communications *) = 0;
 };

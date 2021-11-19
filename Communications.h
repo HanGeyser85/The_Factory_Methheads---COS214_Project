@@ -3,11 +3,9 @@
 
 class Communications
 {
-private:
-    /* data */
 public:
-    Communications(/* args */);
-    ~Communications();
+    Communications();
+    virtual void notify(Satellite *, string);
 };
 
 #endif
