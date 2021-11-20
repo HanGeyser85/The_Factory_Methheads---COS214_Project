@@ -3,6 +3,8 @@
 
 using namespace std;
 
+StarlinkSatellite::StarlinkSatellite() : Satellite(0) {}
+
 StarlinkSatellite::StarlinkSatellite(int id) : Satellite(id) {}
 
 Satellite *StarlinkSatellite::clone()

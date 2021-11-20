@@ -62,5 +62,7 @@ int main()
     cout << "Commencing stage 2 \n";
     bigRedButton->hit();
 
+    // cout << "So this is our final product... Full marks: COMMENCING!!! \n";
+
     return 0;
 }

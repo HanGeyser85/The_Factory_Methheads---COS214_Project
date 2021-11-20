@@ -10,6 +10,8 @@ class VacuumMerlinEngine : public RocketPart
     private:
 
     public:
+        void add(RocketPart*);
+        void remove(RocketPart*);
         VacuumMerlinEngine();
         ~VacuumMerlinEngine();
         void print();

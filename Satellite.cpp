@@ -5,6 +5,8 @@ Satellite::Satellite(int ID)
     id = ID;
 }
 
+Satellite::~Satellite() {}
+
 void Satellite::addNextSat(Satellite *next)
 {
     nextSat = next;

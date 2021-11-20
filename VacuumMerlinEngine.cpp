@@ -19,3 +19,7 @@ void VacuumMerlinEngine::print()
 string VacuumMerlinEngine::getName() {
     return "Vacuum Merlin Engine";
 }
+
+void VacuumMerlinEngine::add(RocketPart* r) {}
+
+void VacuumMerlinEngine::remove(RocketPart* r) {}

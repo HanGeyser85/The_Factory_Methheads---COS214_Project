@@ -1,13 +1,12 @@
 #ifndef SATELLITE_H
-#define STAELLITE_H
+#define SATELLITE_H
 
 #include <string>
 #include "Communications.h"
 
 using namespace std;
 
-class Satellite
-{
+class Satellite {
 private:
     Communications *comms;
 

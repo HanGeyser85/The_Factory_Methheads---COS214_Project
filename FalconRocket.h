@@ -3,6 +3,7 @@
 #ifndef FALCONROCKET_H
 #define FALCONROCKET_H
 #include "RocketPart.h"
+#include <vector>
 using namespace std;
 
 class FalconRocket : public RocketPart
@@ -14,7 +15,7 @@ class FalconRocket : public RocketPart
         bool engineFault;
 
     public:
-        list<RocketPart*> parts;
+        vector<RocketPart*> parts;
         FalconRocket(string, string);
         ~FalconRocket();
         void print();

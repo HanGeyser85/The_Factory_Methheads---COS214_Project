@@ -5,11 +5,14 @@
 #include "RocketPart.h"
 using namespace std;
 
-class MerlinEngine : public RocketPart{
+class MerlinEngine : public RocketPart {
     
     private:
 
     public:
+        string getName();
+        void add(RocketPart*);
+        void remove(RocketPart*);
         MerlinEngine();
         ~MerlinEngine();
         void print();

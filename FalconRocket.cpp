@@ -31,10 +31,28 @@ void FalconRocket::add(RocketPart* rp)
 
 void FalconRocket::remove(RocketPart* rp)
 {
-    parts.remove(rp);
+    // parts.pop_back();
+
+    vector<RocketPart*> :: iterator it;
+    int count = 0;
+    for (it = parts.begin(); it != parts.end(); ++it) {
+        if (*it == rp) parts.erase(it);
+        count++;
+    }
+
+
+
 }
 
 bool FalconRocket::hasEngineFault()
 {
     return this->engineFault;
+}
+
+string FalconRocket::getName() {
+    return name;
+}
+
+string FalconRocket::getType() {
+    return type;
 }

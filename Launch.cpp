@@ -6,7 +6,7 @@ void Launch::execute()
     cout << "Commencing launch..." << endl;
 }
 
-Launch::Launch(FalconRocket* f) : Launch(f)
+Launch::Launch(FalconRocket* f) : Command(f)
 {
 
 }

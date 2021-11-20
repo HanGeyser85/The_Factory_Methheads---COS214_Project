@@ -9,7 +9,7 @@ protected:
     StarlinkSatellite(int);
 
 public:
-    StarlinkSatellite(/* args */);
+    StarlinkSatellite();
     ~StarlinkSatellite();
     Satellite *clone();
     void set(Communications *);

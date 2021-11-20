@@ -4,14 +4,13 @@
 #include "FalconRocket.h"
 using namespace std;
 
-class Command
-{
+class Command {
     private:
         FalconRocket* rocket;
     
     public:
         Command(FalconRocket*);
         virtual void execute() = 0;
-        FalconRocket* accessRocket();
+        FalconRocket* accessRocket() { return rocket; };
 };
 #endif
