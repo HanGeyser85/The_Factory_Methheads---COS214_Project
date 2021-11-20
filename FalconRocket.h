@@ -10,10 +10,11 @@ class FalconRocket : public RocketPart
     private:
         string name;
         string type;
-        list<RocketPart*> parts;
+        // list<RocketPart*> parts;
         bool engineFault;
 
     public:
+        list<RocketPart*> parts;
         FalconRocket(string, string);
         ~FalconRocket();
         void print();

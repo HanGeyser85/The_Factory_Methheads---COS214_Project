@@ -13,6 +13,7 @@ class RocketPart {
     private:
         list<Observer*> observerList;
     public:
+        virtual string getName() = 0;
         virtual void print() = 0;
         virtual void add(RocketPart*) = 0;
         virtual void remove(RocketPart*) = 0;

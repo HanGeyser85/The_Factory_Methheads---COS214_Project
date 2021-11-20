@@ -12,5 +12,5 @@ Satellite *StarlinkSatellite::clone()
 
 void StarlinkSatellite::set(Communications *coms)
 {
-    this->comms = coms;
+    this->setComms(coms);
 }

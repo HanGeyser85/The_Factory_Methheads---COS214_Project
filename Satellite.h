@@ -25,6 +25,7 @@ public:
     void communicate(string);
     virtual Satellite *clone() = 0;
     virtual void set(Communications *) = 0;
+    void setComms(Communications*);
 };
 
 #endif

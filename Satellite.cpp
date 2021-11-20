@@ -24,3 +24,7 @@ void Satellite::communicate(string msg)
 {
     comms->notify(this, msg);
 }
+
+void Satellite::setComms(Communications *newCom) {
+    comms = newCom;
+}
