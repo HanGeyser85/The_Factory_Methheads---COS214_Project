@@ -37,16 +37,28 @@ int main()
     cout << "Building Falcon9 Rocket \n";
     falconNine->add(f9cFactory->produce());
 
+    Observer* observer = new EngineObserver(falconNine);
     for (int i = 0; i < 9; i++)
-        falconNine->add(meFactory->produce());
+    {
+        RocketPart* newPart = meFactory->produce();
+        newPart->addObserver(observer);
+        falconNine->add(newPart);
+    }
 
     cout << "Building Falcon Heavy Rocket \n";
+
     // Heavy
+
+    Observer* heavyObserver = new EngineObserver(falconHeavy);
     for (int i = 0; i < 3; i++)
         falconHeavy->add(f9cFactory->produce());
 
     for (int i = 0; i < 27; i++)
-        falconHeavy->add(meFactory->produce());
+    {
+        RocketPart* newPart = meFactory->produce();
+        newPart->addObserver(heavyObserver);
+        falconNine->add(newPart);
+    }
 
     falconHeavy->add(vmeFactory->produce());
 
@@ -57,6 +69,10 @@ int main()
     Button *rollButton = new Button(roll);
     Button *staticTestButton = new Button(staticTest);
     Button *bigRedButton = new Button(nextStage);
+
+
+    //Fail static test
+    cout << "Commencing static test" << endl;
 
     cout << "Commencing static test" << endl;
     staticTestButton->hit();

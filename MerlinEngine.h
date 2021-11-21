@@ -16,5 +16,7 @@ class MerlinEngine : public RocketPart {
         MerlinEngine();
         ~MerlinEngine();
         void print();
+        void addObserver(Observer*){};
+
 };
 #endif

@@ -21,6 +21,7 @@ public:
     void print();
     void add(RocketPart *) override;
     void remove(RocketPart *) override;
+    void addObserver(Observer*) override;
     bool hasEngineFault();
     string getName();
     string getType();

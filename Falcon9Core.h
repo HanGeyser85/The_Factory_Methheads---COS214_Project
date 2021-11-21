@@ -15,6 +15,7 @@ class Falcon9Core : public RocketPart{
         void add(RocketPart*);
         void remove(RocketPart*);
         Falcon9Core();
+        void addObserver(Observer*){};
         ~Falcon9Core();
 };
 #endif

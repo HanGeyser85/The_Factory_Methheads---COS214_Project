@@ -10,13 +10,14 @@ using namespace std;
 
 class RocketPart {
 
-    private:
+    protected:
         list<Observer*> observerList;
     public:
         virtual string getName() = 0;
         virtual void print() = 0;
         virtual void add(RocketPart*) = 0;
         virtual void remove(RocketPart*) = 0;
+        virtual void addObserver(Observer*) = 0;
 
 };
 #endif
