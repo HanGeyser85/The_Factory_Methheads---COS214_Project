@@ -13,7 +13,7 @@ SatelliteFactory::~SatelliteFactory()
     delete sat;
 }
 
-void SatelliteFactory::createSatellite()
+Satellite *SatelliteFactory::createSatellite()
 {
     if (sat == nullptr)
     {
@@ -23,4 +23,5 @@ void SatelliteFactory::createSatellite()
     {
         cout << "Satellite already created\n";
     }
+    return sat;
 }

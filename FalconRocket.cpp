@@ -5,43 +5,39 @@ FalconRocket::FalconRocket(string n, string t) : name(n), type(t)
 {
     engineFault = false;
 
-    //if n == Falcon9   
-    //this->add( factory->makeMerlinEngine()) x 7
+    // if n == Falcon9
+    // this->add( factory->makeMerlinEngine()) x 7
 }
 
 FalconRocket::~FalconRocket()
 {
-
 }
 
 void FalconRocket::print()
 {
     cout << this->name << ":" << endl;
-    for(RocketPart* r : parts)
+    for (RocketPart *r : parts)
     {
         r->print();
     }
     cout << endl;
 }
 
-void FalconRocket::add(RocketPart* rp)
+void FalconRocket::add(RocketPart *rp)
 {
     parts.push_back(rp);
 }
 
-void FalconRocket::remove(RocketPart* rp)
+void FalconRocket::remove(RocketPart *rp)
 {
     // parts.pop_back();
 
-    vector<RocketPart*> :: iterator it;
-    int count = 0;
-    for (it = parts.begin(); it != parts.end(); ++it) {
-        if (*it == rp) parts.erase(it);
-        count++;
+    vector<RocketPart *>::iterator it;
+    for (it = parts.begin(); it != parts.end(); ++it)
+    {
+        if (*it == rp)
+            parts.erase(it);
     }
-
-
-
 }
 
 bool FalconRocket::hasEngineFault()
@@ -49,10 +45,12 @@ bool FalconRocket::hasEngineFault()
     return this->engineFault;
 }
 
-string FalconRocket::getName() {
+string FalconRocket::getName()
+{
     return name;
 }
 
-string FalconRocket::getType() {
+string FalconRocket::getType()
+{
     return type;
 }

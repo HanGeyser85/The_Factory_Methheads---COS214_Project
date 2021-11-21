@@ -1,9 +1,10 @@
 #ifndef LASER_H
 #define LASER_H
 #include "Satellite.h"
+#include "Communications.h"
 #include <vector>
 
-class Laser
+class Laser : public Communications
 {
 
 public:

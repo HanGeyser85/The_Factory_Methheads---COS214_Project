@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Satellite; 
+class Satellite;
 class Communications
 {
 public:

@@ -11,7 +11,7 @@ private:
 public:
     SatelliteFactory();
     ~SatelliteFactory();
-    void createSatellite();
+    Satellite *createSatellite();
     virtual Satellite *getSatellite() = 0;
 };
 

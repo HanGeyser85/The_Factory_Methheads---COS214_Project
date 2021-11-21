@@ -3,7 +3,7 @@
 
 using namespace std;
 
-StarlinkSatellite::StarlinkSatellite() : Satellite(0) {}
+StarlinkSatellite::StarlinkSatellite() : Satellite(1) {}
 
 StarlinkSatellite::StarlinkSatellite(int id) : Satellite(id) {}
 
