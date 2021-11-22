@@ -275,7 +275,7 @@ bool simulate()
 
             cout << "Deploying Starlink Satellites!\n";
             cout << "Testing communication between satellites...\n";
-            coms->notify(allSats[0], "I am spread out!");
+            allSats[0]->communicate("I am spread out!");
             cout << "Communication successful!\n";
             cout << "Ending Satellite Launch simulation...\nWould you like to simulate again?\n";
             cout << "1-Yes\n2-No\nEnter number here: ";
