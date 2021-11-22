@@ -3,79 +3,62 @@
 
 #include <string>
 #include <vector>
-#include "Decorator.h"
 #include "DObserver.h"
 #include "State.h"
 #include "Satellite.h"
+#include "RocketPart.h"
 
 using namespace std;
-
+class State;
 class DragonCraft
 {
-	private:
-		vector<DObserver*> observerList;
-		vector<Satellite*> satList;
-		State* craftState;
+private:
+	vector<DObserver *> observerList;
+	State *craftState;
+	RocketPart *rockets;
+	int crewNum;
 
-	public:
-		DragonCraft();
-		string getStateType();
-		State* getState();
-		void setState(State* S);
-		void setSatlist(vector<Satellite*> sL);
-		vector<Satellite*> getSatlist();
-		void changeState();
-		virtual void addDecoration(DragonCraft* Dc) = 0;
-		virtual ~DragonCraft(){};
-		virtual void setDeployFailure(bool failure) =0;
-		virtual void setSystemFailure(bool failure) =0;
-		virtual void setLaunchFailure(bool failure) =0;
-		virtual void setTransportFailure(bool failure) =0;
-		virtual void setDockingFailure(bool failure) =0;
-		virtual bool hasSystemFailure() =0;
-		virtual bool hasDeployFailure() =0;
-		virtual bool hasLaunchFailure() =0;
-		virtual bool hasTransportFailure() =0;
-		virtual bool hasDockingFailure() =0;
+public:
+	DragonCraft();
+	string getStateType();
+	State *getState();
+	void setCrewNum(int);
+	void setState(State *S);
+	vector<Satellite *> getSatlist();
+	void setRocket(RocketPart *);
+	void changeState();
+	virtual void addDecoration(DragonCraft *Dc) = 0;
+	virtual ~DragonCraft(){};
+	virtual void setDeployFailure(bool failure) = 0;
+	virtual void setSystemFailure(bool failure) = 0;
+	virtual void setLaunchFailure(bool failure) = 0;
+	virtual void setTransportFailure(bool failure) = 0;
+	virtual void setDockingFailure(bool failure) = 0;
+	virtual bool hasSystemFailure() = 0;
+	virtual bool hasDeployFailure() = 0;
+	virtual bool hasLaunchFailure() = 0;
+	virtual bool hasTransportFailure() = 0;
+	virtual bool hasDockingFailure() = 0;
 
-		void attach(DObserver* observer){
-			observerList.push_back(observer);
+	void attach(DObserver *observer)
+	{
+		observerList.push_back(observer);
+	}
+
+	void detach(DObserver *observer)
+	{
+		for (int i = 0; i < observerList.size(); i++)
+		{
+			if (observerList[i] == observer)
+				observerList.erase(observerList.begin() + i);
 		}
+	}
 
-		void detach(DObserver* observer){
-			for(int i=0; i<observerList.size(); i++){
-				if(observerList[i] == observer)
-					observerList.erase(observerList.begin()+i);
-			}
-		}
-
-		void notify(){
-			for(int i=0; i<observerList.size(); i++)
-				observerList[i]->update();
-		}
+	void notify()
+	{
+		for (int i = 0; i < observerList.size(); i++)
+			observerList[i]->update();
+	}
 };
-
-DragonCraft::DragonCraft() {
-}
-
-string DragonCraft::getStateType() {
-	return craftState->getStateType();
-}
-
-State* DragonCraft::getState() {
-	return craftState;
-}
-
-void DragonCraft::setState(State* S) {
-	craftState = S;
-}
-
-void DragonCraft::changeState() {
-	craftState->changeState(this);
-}
-
-void DragonCraft::setSatlist(vector<Satellite*> sL){
-	satList = sL;
-}
 
 #endif

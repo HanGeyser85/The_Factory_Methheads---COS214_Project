@@ -4,33 +4,15 @@
 #include "DragonCraft.h"
 
 using namespace std;
-
-class Decorator: public DragonCraft
+class Decorator : public DragonCraft
 {
-	protected:
-		~Decorator();
+protected:
+	~Decorator();
 
-	public:
-		DragonCraft* dCComp;
-	 	Decorator();
-		virtual void addDecoration(DragonCraft* Dc);
+public:
+	DragonCraft *dCComp;
+	Decorator();
+	virtual void addDecoration(DragonCraft *Dc);
 };
-
-Decorator::Decorator() {
-	dCComp = nullptr;
-}
-
-Decorator::~Decorator() {
-	dCComp = nullptr;
-	delete dCComp;
-}
-
-void Decorator::addDecoration(DragonCraft* Dc) {
-	if (dCComp == nullptr) {
-		dCComp = Dc;
-	} else {
-		dCComp->addDecoration(Dc);
-	}
-}
 
 #endif

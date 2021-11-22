@@ -54,8 +54,3 @@ string FalconRocket::getType()
 {
     return type;
 }
-
-void FalconRocket::addObserver(Observer* o)
-{
-    this->observerList.push_back(o);
-}

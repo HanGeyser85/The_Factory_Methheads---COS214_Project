@@ -16,7 +16,5 @@ class VacuumMerlinEngine : public RocketPart
         ~VacuumMerlinEngine();
         void print();
         string getName();
-        void addObserver(Observer*){};
-
 };
 #endif

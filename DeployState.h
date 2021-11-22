@@ -8,19 +8,11 @@
 
 using namespace std;
 
-class DeployState: public State
+class DeployState : public State
 {
-	public:
-		DeployState();
-		virtual void changeState(DragonCraft* Context);
+public:
+	DeployState();
+	virtual void changeState(DragonCraft *Context);
 };
-
-DeployState::DeployState() : State("Deploy State") {
-}
-
-void DeployState::changeState(DragonCraft* Context) {
-	cout<<"Done"<<endl;
-	Context->setState(nullptr);
-}
 
 #endif

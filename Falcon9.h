@@ -6,10 +6,12 @@ using namespace std;
 class Falcon9 : public FalconRocket
 {
 
-    private:
+private:
+    vector<Satellite *> StarlinkSats;
 
-    public:
-        Falcon9(string, string);
-        ~Falcon9();
+public:
+    Falcon9(string, string);
+    void addSats(vector<Satellite *>);
+    ~Falcon9();
 };
 #endif

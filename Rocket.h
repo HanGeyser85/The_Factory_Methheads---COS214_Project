@@ -1,15 +1,13 @@
-#ifndef CARGO_H
-#define CARGO_H
+#ifndef ROCKET_H
+#define ROCKET_H
 
 #include "Decorator.h"
+#include "RocketPart.h"
 
-using namespace std;
-
-class Cargo : public Decorator
+class Rocket : public Decorator
 {
 public:
-    Cargo();
-    ~Cargo() {}
+    Rocket(RocketPart *);
     virtual void setDeployFailure(bool failure){};
     virtual void setSystemFailure(bool failure){};
     virtual void setLaunchFailure(bool failure){};
@@ -21,10 +19,5 @@ public:
     virtual bool hasTransportFailure() { return 0; };
     virtual bool hasDockingFailure() { return 0; };
 };
-
-Cargo::Cargo() : Decorator()
-{
-    cout << "Adding cargo to the DragonCraft..." << endl;
-}
 
 #endif

@@ -48,6 +48,7 @@ void NextStage::execute()
             }
         }
     }
+    cout << "Move to stage 2 complete!\n";
 }
 
 NextStage::NextStage(FalconRocket *f) : Command(f)

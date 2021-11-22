@@ -1,15 +1,15 @@
-#ifndef CARGO_H
-#define CARGO_H
+#ifndef CREW_H
+#define CREW_H
 
 #include "Decorator.h"
 
 using namespace std;
 
-class Cargo : public Decorator
+class Crew : public Decorator
 {
 public:
-    Cargo();
-    ~Cargo() {}
+    Crew(int);
+    ~Crew() {}
     virtual void setDeployFailure(bool failure){};
     virtual void setSystemFailure(bool failure){};
     virtual void setLaunchFailure(bool failure){};
@@ -22,9 +22,10 @@ public:
     virtual bool hasDockingFailure() { return 0; };
 };
 
-Cargo::Cargo() : Decorator()
+Crew::Crew(int num) : Decorator()
 {
-    cout << "Adding cargo to the DragonCraft..." << endl;
+    cout << num << " crew members will be added to the spacecraft..." << endl;
+    setCrewNum(num);
 }
 
 #endif

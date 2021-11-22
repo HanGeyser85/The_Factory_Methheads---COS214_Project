@@ -8,17 +8,12 @@
 
 using namespace std;
 
-class DragonCrewConstruct: public DragonConsturction
+class DragonCrewConstruct : public DragonConsturction
 {
-	public:
-		DragonCrewConstruct() : DragonConsturction(){};
-		~DragonCrewConstruct(){};
-		virtual DragonCraft* factoryMethod();
+public:
+	DragonCrewConstruct() : DragonConsturction(){};
+	~DragonCrewConstruct(){};
+	virtual DragonCraft *factoryMethod();
 };
-
-DragonCraft* DragonCrewConstruct::factoryMethod() {
-	cout<<"Created a Dragon Crew."<<endl;
-	return new DragonCrew();
-}
 
 #endif
