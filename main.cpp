@@ -131,10 +131,10 @@ bool simulate()
 
                 for (int i = 0; i < 9; i++)
                     rocket->add(meFactory->produce());
-                cout << "Merlin engins added!\n";
+                cout << "Merlin engines added!\n";
 
                 rocket->add(vmeFactory->produce());
-                cout << "Vacuum Merlin engin added!\n";
+                cout << "Vacuum Merlin engine added!\n";
             }
             else
             {
@@ -150,10 +150,10 @@ bool simulate()
 
                 for (int i = 0; i < 27; i++)
                     rocket->add(meFactory->produce());
-                cout << "Merlin engins added!\n";
+                cout << "Merlin engines added!\n";
 
                 rocket->add(vmeFactory->produce());
-                cout << "Vacuum Merlin engin added!\n";
+                cout << "Vacuum Merlin engine added!\n";
             }
             cout << "Construction of rocket complete!\n";
             spaceCraft->addDecoration(new Rocket(rocket));
@@ -179,9 +179,30 @@ bool simulate()
             spaceCraft->attach(launch);
             spaceCraft->attach(transport);
 
-            // rocket->setSystemFailure(true);
-            // rocket->notify();
-            // systems->print();
+            cout << "Simulate a failure? Y/N" << endl;
+            cin >> ans;
+
+            if(ans == 'Y')
+            {
+                cout << "Which failure would you like to simulate?\n1. Deploy Failure\n2. Docking Failure\n3. Launch Failure\n4. System Failure";
+                cin >> ans;
+                switch(ans)
+                {
+                    case '1':
+                        spaceCraft->setDeployFailure(true);
+                        break;
+                    case '2':
+                        spaceCraft->setDockingFailure(true);
+                        break;
+                    case '3':
+                        spaceCraft->setLaunchFailure(true);
+                        break;
+                    case '4':
+                        spaceCraft->setSystemFailure(true);
+                        break;
+                }
+                spaceCraft->notify();
+            }
 
             transport->print();
             spaceCraft->setState(new TransportState()); // transporting
@@ -218,7 +239,7 @@ bool simulate()
             cout << "Merlin engins added!\n";
 
             rocket->add(vmeFactory->produce());
-            cout << "Vacuum Merlin engin added!\n";
+            cout << "Vacuum Merlin engine added!\n";
             cout << "Construction of rocket complete!\nThe Starlink Satellites will now be added to the rocket.\n";
             SatelliteFactory *fact = new StarlinkFactory();
 
