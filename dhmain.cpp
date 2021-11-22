@@ -20,6 +20,12 @@
 #include "TransportState.h"
 #include "WasteDisposal.h"
 #include "DObserver.h"
+#include "SatelliteFactory.h"
+#include "Communications.h"
+#include "StarlinkFactory.h"
+#include "StarlinkSatellite.h"
+#include "Laser.h"
+#include "Cargo.h"
 #include <iostream>
 
 using namespace std;
@@ -49,15 +55,36 @@ int main()
     cout<<"DECORATOR START"<<endl;
     cout<<"============================================================"<<endl;
     cout<<endl;
+
+    SatelliteFactory *fact = new StarlinkFactory();
+
+    vector<Satellite *> allSats;
+    // Satellite **allSats = new Satellite *[60];
+    Communications *coms = new Laser();
+    allSats.push_back(fact->createSatellite());
+    allSats[0]->set(coms);
+
+    for (int i = 1; i < 60; i++)
+    {
+        allSats.push_back(allSats[i - 1]->clone());
+        allSats[i - 1]->addNextSat(allSats[i]);
+        allSats[i]->set(coms);
+    }
+
+    coms->notify(allSats[0], "I am spread out!");
+
+
     cout<<"Dragon crew"<<endl;
     DCC->addDecoration(new Door());
     DCC->addDecoration(new WasteDisposal());
     DCC->addDecoration(new Computers());
+    DCC->addDecoration(new Cargo(allSats));
     cout<<endl;
     cout<<"Dragon Spacecraft"<<endl;
     DC->addDecoration(new Door());
     DC->addDecoration(new WasteDisposal());
     DC->addDecoration(new Computers());
+    DC->addDecoration(new Cargo(allSats));
 
     cout<<"============================================================"<<endl;
     cout<<"DECORATOR END"<<endl;
@@ -169,14 +196,7 @@ int main()
     cout<<"============================================================"<<endl;
     cout<<endl;
 
-
-
-
-
-
-
-
-
+    
     return 0;
 }
 

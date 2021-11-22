@@ -6,6 +6,7 @@
 #include "Decorator.h"
 #include "DObserver.h"
 #include "State.h"
+#include "Satellite.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class DragonCraft
 {
 	private:
 		vector<DObserver*> observerList;
+		vector<Satellite*> satList;
 		State* craftState;
 
 	public:
@@ -20,6 +22,8 @@ class DragonCraft
 		string getStateType();
 		State* getState();
 		void setState(State* S);
+		void setSatlist(vector<Satellite*> sL);
+		vector<Satellite*> getSatlist();
 		void changeState();
 		virtual void addDecoration(DragonCraft* Dc) = 0;
 		virtual ~DragonCraft(){};
@@ -68,6 +72,10 @@ void DragonCraft::setState(State* S) {
 
 void DragonCraft::changeState() {
 	craftState->changeState(this);
+}
+
+void DragonCraft::setSatlist(vector<Satellite*> sL){
+	satList = sL;
 }
 
 #endif
