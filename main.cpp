@@ -37,28 +37,16 @@ int main()
     cout << "Building Falcon9 Rocket \n";
     falconNine->add(f9cFactory->produce());
 
-    Observer* observer = new EngineObserver(falconNine);
     for (int i = 0; i < 9; i++)
-    {
-        RocketPart* newPart = meFactory->produce();
-        newPart->addObserver(observer);
-        falconNine->add(newPart);
-    }
+        falconNine->add(meFactory->produce());
 
     cout << "Building Falcon Heavy Rocket \n";
-
     // Heavy
-
-    Observer* heavyObserver = new EngineObserver(falconHeavy);
     for (int i = 0; i < 3; i++)
         falconHeavy->add(f9cFactory->produce());
 
     for (int i = 0; i < 27; i++)
-    {
-        RocketPart* newPart = meFactory->produce();
-        newPart->addObserver(heavyObserver);
-        falconNine->add(newPart);
-    }
+        falconHeavy->add(meFactory->produce());
 
     falconHeavy->add(vmeFactory->produce());
 
@@ -69,10 +57,6 @@ int main()
     Button *rollButton = new Button(roll);
     Button *staticTestButton = new Button(staticTest);
     Button *bigRedButton = new Button(nextStage);
-
-
-    //Fail static test
-    cout << "Commencing static test" << endl;
 
     cout << "Commencing static test" << endl;
     staticTestButton->hit();
@@ -87,14 +71,15 @@ int main()
     ////////CODE FOR SATELLITE HIERARCHY//////////////////////////
     SatelliteFactory *fact = new StarlinkFactory();
 
-    Satellite **allSats = new Satellite *[60];
+    vector<Satellite *> allSats;
+    // Satellite **allSats = new Satellite *[60];
     Communications *coms = new Laser();
-    allSats[0] = fact->createSatellite();
+    allSats.push_back(fact->createSatellite());
     allSats[0]->set(coms);
 
     for (int i = 1; i < 60; i++)
     {
-        allSats[i] = allSats[i - 1]->clone();
+        allSats.push_back(allSats[i - 1]->clone());
         allSats[i - 1]->addNextSat(allSats[i]);
         allSats[i]->set(coms);
     }
@@ -103,7 +88,6 @@ int main()
 
     delete fact;
     delete coms;
-    delete[] allSats;
 
     return 0;
 }
