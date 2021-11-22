@@ -47,7 +47,7 @@
 #include "Crew.h"
 using namespace std;
 
-int main()
+bool simulate()
 {
     const string heavy = "falcon_heavy";
     const string nine = "falcon_nine";
@@ -57,10 +57,14 @@ int main()
     {
         DragonCraft *spaceCraft;
         FalconRocket *rocket;
-        cout << "Welcome to the Tesla Launch simulator! ♥\nWhich simulation would you like to run?\n";
+        cout << "Welcome to the Tesla Launch simulator! ♥\nIf you wish to restart the simulation at any time, enter 9\nWhich simulation would you like to run?\n";
         cout << "1-Spacecraft launch\n2-Satellite launch\nEnter the number here: ";
         cin >> sC;
         cout << endl;
+
+        if(sC == 9)
+            break;
+
         if (sC == 1)
         {
             cout << "Which spacecraft would you like to create?\n";
@@ -68,12 +72,18 @@ int main()
             cin >> sC;
             cout << endl;
             DragonConsturction *constructor;
+
+            if(sC == 9)
+                break;
+                
             if (sC == 1)
             {
                 constructor = new DragonCrewConstruct();
                 spaceCraft = constructor->factoryMethod();
                 cout << "Do you want to add crew to the spacecraft? (Y/N)\n";
                 cin >> ans;
+                if(ans == '9')
+                    break;
                 if (ans == 'Y')
                 {
                     cout << "How many crew members will be aboard the spacecraft?\nEnter the number here: ";
@@ -89,6 +99,9 @@ int main()
 
             cout << "Do you want to add 🚗go? (Y/N)\n";
             cin >> ans;
+            if(ans == '9')
+                break;
+
             if (ans == 'Y')
             {
                 spaceCraft->addDecoration(new Cargo());
@@ -103,6 +116,8 @@ int main()
             cout << "1-Falcon 9\n2-Falcon Heavy\nEnter the number here: ";
             cin >> sC;
 
+            if(sC == 9)
+                break;
             if (sC == 1)
             {
                 rocket = new Falcon9("Star Piercer", nine);
@@ -152,17 +167,17 @@ int main()
             Button *staticTestButton = new Button(staticTest);
             Button *bigRedButton = new Button(nextStage);
 
-            DObserver *systems = new SystemsObserver(rocket);
-            DObserver *deploy = new DeployObserver(rocket);
-            DObserver *docking = new DockingObserver(rocket);
-            DObserver *launch = new LaunchObserver(rocket);
-            DObserver *transport = new TransportObserver(rocket);
+            DObserver *systems = new SystemsObserver(spaceCraft);
+            DObserver *deploy = new DeployObserver(spaceCraft);
+            DObserver *docking = new DockingObserver(spaceCraft);
+            DObserver *launch = new LaunchObserver(spaceCraft);
+            DObserver *transport = new TransportObserver(spaceCraft);
 
-            rocket->attach(systems);
-            rocket->attach(deploy);
-            rocket->attach(docking);
-            rocket->attach(launch);
-            rocket->attach(transport);
+            spaceCraft->attach(systems);
+            spaceCraft->attach(deploy);
+            spaceCraft->attach(docking);
+            spaceCraft->attach(launch);
+            spaceCraft->attach(transport);
 
             // rocket->setSystemFailure(true);
             // rocket->notify();
@@ -247,6 +262,19 @@ int main()
         }
 
     } while (sC == 1);
+
+    if(sC == 2)
+        return 0;
+    return (sC == 9 || ans == '9');
+}
+
+int main()
+{
+    
+    while(simulate())
+    {
+
+    }
 
     // // cout << "So this is our final product... Full marks: COMMENCING!!! \n";
     // DragonCraft *DCC;
