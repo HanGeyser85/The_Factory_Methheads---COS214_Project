@@ -1,0 +1,32 @@
+\hypertarget{_state_8h_source}{}\doxysection{State.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef STATE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define STATE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}DragonCraft.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_dragon_craft}{DragonCraft}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{string} stateType;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} operational;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} changeState(\mbox{\hyperlink{class_dragon_craft}{DragonCraft}} *Context) = 0;}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_state}{State}}(\textcolor{keywordtype}{string} ST);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} setStateType(\textcolor{keywordtype}{string} StateType);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{string} getStateType();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} setoperational(\textcolor{keywordtype}{bool} operational);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{bool} getoperational();}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_state}{State}} *init();}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

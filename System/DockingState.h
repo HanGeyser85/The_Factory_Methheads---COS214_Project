@@ -8,7 +8,7 @@
 #include "State.h"
 
 using namespace std;
-
+/// This moves rockets to the final state of the launch, the docking state when the launch is finished.
 class DockingState : public State
 {
 public:

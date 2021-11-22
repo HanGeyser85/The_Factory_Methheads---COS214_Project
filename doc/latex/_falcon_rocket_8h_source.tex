@@ -1,0 +1,33 @@
+\hypertarget{_falcon_rocket_8h_source}{}\doxysection{Falcon\+Rocket.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Composite of Composite DP}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef FALCONROCKET\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define FALCONROCKET\_H}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}RocketPart.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Satellite.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_falcon_rocket}{FalconRocket}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_rocket_part}{RocketPart}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{string} type;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} engineFault;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     vector<RocketPart *> parts;}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_falcon_rocket}{FalconRocket}}(\textcolor{keywordtype}{string}, \textcolor{keywordtype}{string});}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_falcon_rocket}{\string~FalconRocket}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} add(\mbox{\hyperlink{class_rocket_part}{RocketPart}} *) \textcolor{keyword}{override};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} remove(\mbox{\hyperlink{class_rocket_part}{RocketPart}} *) \textcolor{keyword}{override};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} hasEngineFault();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{string} getName();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{string} getType();}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

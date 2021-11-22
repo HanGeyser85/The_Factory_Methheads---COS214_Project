@@ -1,0 +1,46 @@
+\hypertarget{_systems_observer_8h_source}{}\doxysection{Systems\+Observer.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//Concrete observer to notify current state of systems}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef SYSTEMSOBSERVER\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define SYSTEMSOBSERVER\_H}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}DObserver.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}DragonCraft.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_systems_observer}{SystemsObserver}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_d_observer}{DObserver}}\{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_dragon_craft}{DragonCraft}}* craft;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} system;  \textcolor{comment}{//true for system error false for no errors atm}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_systems_observer}{SystemsObserver}}(\mbox{\hyperlink{class_dragon_craft}{DragonCraft}}* spacecraft)\{}
+\DoxyCodeLine{19         craft = spacecraft;}
+\DoxyCodeLine{20         system = \textcolor{keyword}{false};}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} update()\{}
+\DoxyCodeLine{24         \textcolor{keywordflow}{if}(craft-\/>hasSystemFailure())}
+\DoxyCodeLine{25             system = \textcolor{keyword}{true};}
+\DoxyCodeLine{26         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{27             system = \textcolor{keyword}{false};}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} print()\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}(system)}
+\DoxyCodeLine{32             cout << \textcolor{stringliteral}{"{}There is a system failure that needs to be attended to!"{}} << endl;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{34             cout << \textcolor{stringliteral}{"{}All systems are ready to go"{}} << endl;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+
+\end{DoxyCode}

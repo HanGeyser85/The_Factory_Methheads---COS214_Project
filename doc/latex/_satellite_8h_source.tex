@@ -1,0 +1,36 @@
+\hypertarget{_satellite_8h_source}{}\doxysection{Satellite.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SATELLITE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SATELLITE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Communications.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_communications}{Communications}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_satellite}{Satellite}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_communications}{Communications}} *comms;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_satellite}{Satellite}} *nextSat;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_satellite}{Satellite}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_satellite}{Satellite}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_satellite}{\string~Satellite}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} getID();}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} addNextSat(\mbox{\hyperlink{class_satellite}{Satellite}} *);}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_satellite}{Satellite}} *getNext();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} communicate(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_satellite}{Satellite}} *clone() = 0;}
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} set(\mbox{\hyperlink{class_communications}{Communications}} *) = 0;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} setComms(\mbox{\hyperlink{class_communications}{Communications}} *);}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

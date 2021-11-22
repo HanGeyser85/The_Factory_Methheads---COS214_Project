@@ -1,0 +1,83 @@
+\hypertarget{_dragon_crew_8h_source}{}\doxysection{Dragon\+Crew.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DRAGONCREW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DRAGONCREW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}DragonCraft.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_dragon_crew}{DragonCrew}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_dragon_craft}{DragonCraft}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{private}:}
+\DoxyCodeLine{12         \textcolor{keywordtype}{bool} systemFailure;}
+\DoxyCodeLine{13         \textcolor{keywordtype}{bool} deployFailure;}
+\DoxyCodeLine{14         \textcolor{keywordtype}{bool} launchFailure;}
+\DoxyCodeLine{15         \textcolor{keywordtype}{bool} transportFailure;}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} dockingFailure;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{public}: }
+\DoxyCodeLine{19         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} addDecoration(\mbox{\hyperlink{class_dragon_craft}{DragonCraft}}* Dc)\{\};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \mbox{\hyperlink{class_dragon_crew}{DragonCrew}}() : \mbox{\hyperlink{class_dragon_craft}{DragonCraft}}()\{}
+\DoxyCodeLine{22             systemFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{23             deployFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{24             launchFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{25             transportFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{26             dockingFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \mbox{\hyperlink{class_dragon_crew}{\string~DragonCrew}}()\{}
+\DoxyCodeLine{30             systemFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{31             deployFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{32             launchFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{33             transportFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{34             dockingFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{35         \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} setDeployFailure(\textcolor{keywordtype}{bool} failure)\{}
+\DoxyCodeLine{38             deployFailure = failure;}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} setSystemFailure(\textcolor{keywordtype}{bool} failure)\{}
+\DoxyCodeLine{42             systemFailure = failure;}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} setLaunchFailure(\textcolor{keywordtype}{bool} failure)\{}
+\DoxyCodeLine{46             launchFailure = failure;}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} setTransportFailure(\textcolor{keywordtype}{bool} failure)\{}
+\DoxyCodeLine{50             transportFailure = failure;}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} setDockingFailure(\textcolor{keywordtype}{bool} failure)\{}
+\DoxyCodeLine{54             dockingFailure = failure;}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{bool} hasSystemFailure()\{}
+\DoxyCodeLine{58             \textcolor{keywordflow}{return} systemFailure;}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{bool} hasDeployFailure()\{}
+\DoxyCodeLine{62             \textcolor{keywordflow}{return} deployFailure;}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{keywordtype}{bool} hasLaunchFailure()\{}
+\DoxyCodeLine{66             \textcolor{keywordflow}{return} launchFailure;}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{bool} hasTransportFailure()\{}
+\DoxyCodeLine{70             \textcolor{keywordflow}{return} transportFailure;}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{bool} hasDockingFailure()\{}
+\DoxyCodeLine{74             \textcolor{keywordflow}{return} dockingFailure;}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

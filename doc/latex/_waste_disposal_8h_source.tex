@@ -1,0 +1,30 @@
+\hypertarget{_waste_disposal_8h_source}{}\doxysection{Waste\+Disposal.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef WASTEDISPOSAL\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define WASTEDISPOSAL\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Decorator.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_waste_disposal}{WasteDisposal}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_decorator}{Decorator}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_waste_disposal}{WasteDisposal}}();}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_waste_disposal}{\string~WasteDisposal}}() \{\}}
+\DoxyCodeLine{13     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setDeployFailure(\textcolor{keywordtype}{bool} failure)\{\};}
+\DoxyCodeLine{14     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setSystemFailure(\textcolor{keywordtype}{bool} failure)\{\};}
+\DoxyCodeLine{15     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setLaunchFailure(\textcolor{keywordtype}{bool} failure)\{\};}
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setTransportFailure(\textcolor{keywordtype}{bool} failure)\{\};}
+\DoxyCodeLine{17     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setDockingFailure(\textcolor{keywordtype}{bool} failure)\{\};}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasSystemFailure() \{ \textcolor{keywordflow}{return} 0; \};}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasDeployFailure() \{ \textcolor{keywordflow}{return} 0; \};}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasLaunchFailure() \{ \textcolor{keywordflow}{return} 0; \};}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasTransportFailure() \{ \textcolor{keywordflow}{return} 0; \};}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasDockingFailure() \{ \textcolor{keywordflow}{return} 0; \};}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

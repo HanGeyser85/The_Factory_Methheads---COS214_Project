@@ -10,6 +10,9 @@
 
 using namespace std;
 class State;
+/// Another base class of a type of rocket which will be launched.
+///
+/// DragonSpacecraft inherits from this class.
 class DragonCraft
 {
 private:
@@ -25,7 +28,11 @@ public:
 	void setCrewNum(int);
 	void setState(State *S);
 	vector<Satellite *> getSatlist();
-	void setRocket(RocketPart *);
+
+	/// @param r This paramater tells the class which RocketPart we wamt to add to the DragonCraft class
+	/// @see addDecoration(DragonCraft *Dc) = 0;
+	/// @return returns void
+	void setRocket(RocketPart *r);
 	void changeState();
 	virtual void addDecoration(DragonCraft *Dc) = 0;
 	virtual ~DragonCraft(){};

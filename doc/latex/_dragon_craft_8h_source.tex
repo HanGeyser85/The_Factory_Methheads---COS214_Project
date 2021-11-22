@@ -1,0 +1,69 @@
+\hypertarget{_dragon_craft_8h_source}{}\doxysection{Dragon\+Craft.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DRAGONCRAFT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DRAGONCRAFT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}DObserver.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}State.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Satellite.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}RocketPart.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}};}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_dragon_craft}{DragonCraft}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     vector<DObserver *> observerList;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_state}{State}} *craftState;}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_rocket_part}{RocketPart}} *rockets;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} crewNum;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_dragon_craft}{DragonCraft}}();}
+\DoxyCodeLine{23     \textcolor{keywordtype}{string} getStateType();}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_state}{State}} *getState();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} setCrewNum(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} setState(\mbox{\hyperlink{class_state}{State}} *S);}
+\DoxyCodeLine{27     vector<Satellite *> getSatlist();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} setRocket(\mbox{\hyperlink{class_rocket_part}{RocketPart}} *);}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} changeState();}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} addDecoration(\mbox{\hyperlink{class_dragon_craft}{DragonCraft}} *Dc) = 0;}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_dragon_craft}{\string~DragonCraft}}()\{\};}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setDeployFailure(\textcolor{keywordtype}{bool} failure) = 0;}
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setSystemFailure(\textcolor{keywordtype}{bool} failure) = 0;}
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setLaunchFailure(\textcolor{keywordtype}{bool} failure) = 0;}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setTransportFailure(\textcolor{keywordtype}{bool} failure) = 0;}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setDockingFailure(\textcolor{keywordtype}{bool} failure) = 0;}
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasSystemFailure() = 0;}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasDeployFailure() = 0;}
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasLaunchFailure() = 0;}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasTransportFailure() = 0;}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} hasDockingFailure() = 0;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} attach(\mbox{\hyperlink{class_d_observer}{DObserver}} *observer)}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         observerList.push\_back(observer);}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} detach(\mbox{\hyperlink{class_d_observer}{DObserver}} *observer)}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < observerList.size(); i++)}
+\DoxyCodeLine{51         \{}
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (observerList[i] == observer)}
+\DoxyCodeLine{53                 observerList.erase(observerList.begin() + i);}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} notify()}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < observerList.size(); i++)}
+\DoxyCodeLine{60             observerList[i]-\/>update();}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

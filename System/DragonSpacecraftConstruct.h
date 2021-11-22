@@ -7,7 +7,9 @@
 #include "DragonSpacecraft.h"
 
 using namespace std;
-
+/// Specialized class of the DragonConstruction.
+///
+/// This constructs the concrete classes DragonSpacecrafts.
 class DragonSpacecraftConstruct : public DragonConsturction
 {
 public:

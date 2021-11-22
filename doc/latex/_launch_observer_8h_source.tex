@@ -1,0 +1,43 @@
+\hypertarget{_launch_observer_8h_source}{}\doxysection{Launch\+Observer.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//Concrete observer to notify state spacecraft pre/during/post launch}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef LAUNCHOBSERVER\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define LAUNCHOBSERVER\_H}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}DObserver.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}DragonCraft.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_launch_observer}{LaunchObserver}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_d_observer}{DObserver}}\{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_dragon_craft}{DragonCraft}}* craft;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{bool} launch;  \textcolor{comment}{//true for system error false for no errors atm}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_launch_observer}{LaunchObserver}}(\mbox{\hyperlink{class_dragon_craft}{DragonCraft}}* spacecraft)\{}
+\DoxyCodeLine{18         craft = spacecraft;}
+\DoxyCodeLine{19         launch = \textcolor{keyword}{false};}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} update()\{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{if}(craft-\/>hasLaunchFailure())}
+\DoxyCodeLine{24             launch = \textcolor{keyword}{true};}
+\DoxyCodeLine{25         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{26             launch = \textcolor{keyword}{false};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} print()\{}
+\DoxyCodeLine{30         \textcolor{keywordflow}{if}(launch)}
+\DoxyCodeLine{31             cout << \textcolor{stringliteral}{"{}There is a launch failure that needs to be attended to!"{}} << endl;}
+\DoxyCodeLine{32         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{33             cout << \textcolor{stringliteral}{"{}Craft is ready for launch"{}} << endl;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
